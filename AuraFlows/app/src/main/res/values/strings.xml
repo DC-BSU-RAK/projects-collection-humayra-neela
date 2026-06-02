@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">AuraFlows</string>
+    <string name="welcome_user">AuraFlows</string>
+    <string name="hope_enjoy">Your mood, your music.</string>
+    <string name="get_started">Get Started</string>
+    <string name="select_2_moods">How are you feeling?</string>
+    <string name="mood_happy">😊 Happy</string>
+    <string name="mood_sad">😢 Sad</string>
+    <string name="mood_angry">😠 Angry</string>
+    <string name="mood_emotional">🥺 Emotional</string>
+    <string name="mood_frustrated">😤 Frustrated</string>
+    <string name="mood_excited">🤩 Excited</string>
+    <string name="my_mood_music">Find My Vibe</string>
+    <string name="reset_moods">Reset Moods</string>
+    <string name="back_to_welcome">Back</string>
+    <string name="info_description">App Information</string>
+    <string name="info_title">About AuraFlows</string>
+    <string name="info_message">This App is used to help you with your mood.\n\nExpress the two moods you are having and we will suggest you music of your taste.</string>
+    <string name="info_ok">Got it!</string>
+    <string name="select_limit_toast">Please select exactly 2 moods</string>
+    <string name="replay">Replay</string>
+    <string name="play">Play</string>
+    <string name="mute">Mute</string>
+</resources>

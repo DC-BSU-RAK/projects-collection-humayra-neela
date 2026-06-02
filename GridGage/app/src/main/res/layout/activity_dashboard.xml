@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#05070A"
+    android:fitsSystemWindows="true">
+
+    <!-- Header -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:paddingHorizontal="16dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/tv_device_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DELTA 3-0243"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btn_mute_dash"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_volume_up"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/white" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Stats Top -->
+    <LinearLayout
+        android:id="@+id/stats_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="24dp"
+        android:paddingTop="16dp"
+        app:layout_constraintTop_toBottomOf="@id/header">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Input"
+                android:textColor="#2DDE98"
+                android:textSize="14sp" />
+            <TextView
+                android:id="@+id/tv_input_watts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0W"
+                android:textColor="@color/white"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="end"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Output"
+                android:textColor="#F59E0B"
+                android:textSize="14sp" />
+            <TextView
+                android:id="@+id/tv_output_watts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0W"
+                android:textColor="@color/white"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Flow Lines and Icons -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/flow_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/bottom_controls"
+        app:layout_constraintTop_toBottomOf="@id/stats_top">
+
+        <!-- Top Icons (Inputs) -->
+        <LinearLayout
+            android:id="@+id/input_icons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+                <FrameLayout
+                    android:id="@+id/card_input_ac"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_marginHorizontal="16dp"
+                    android:background="@drawable/battery_circle_bg"
+                    android:elevation="4dp">
+                    <ImageView
+                        android:id="@+id/iv_input_ac"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_electricity_bolt"
+                        app:tint="@color/black" />
+                </FrameLayout>
+                <TextView
+                    android:id="@+id/tv_input_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TAP TO CONNECT"
+                    android:textColor="#2DDE98"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="6dp" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginHorizontal="16dp"
+                android:alpha="0.3"
+                android:background="@drawable/battery_circle_bg"
+                android:backgroundTint="#1AFFFFFF">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_electricity_bolt"
+                    app:tint="@color/white" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <!-- Vertical Path Lines -->
+        <View
+            android:id="@+id/line_input"
+            android:layout_width="2dp"
+            android:layout_height="60dp"
+            android:background="#33FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/input_icons" />
+
+        <!-- Battery Section -->
+        <FrameLayout
+            android:id="@+id/battery_section"
+            android:layout_width="260dp"
+            android:layout_height="260dp"
+            app:layout_constraintBottom_toTopOf="@id/output_icons"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/input_icons">
+
+            <!-- Wavy Liquid Animation -->
+            <FrameLayout
+                android:id="@+id/battery_wave_container"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:layout_gravity="center"
+                android:background="@drawable/battery_circle_bg"
+                android:backgroundTint="#0AFFFFFF"
+                android:clipToOutline="true">
+
+                <View
+                    android:id="@+id/battery_wave_fill"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="bottom"
+                    android:background="#2DDE98" />
+            </FrameLayout>
+
+            <!-- Progress Ring (Removed for Wave Animation) -->
+
+            <!-- Battery Content -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_battery_percent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:includeFontPadding="false"
+                    android:text="99"
+                    android:textColor="@color/white"
+                    android:textSize="72sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-10dp"
+                    android:text="%"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Battery time remaining"
+                    android:textColor="#B0B0B0"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_runtime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/bg_runtime_badge"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="6dp"
+                    android:text="02d18h00m"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- Output Line -->
+        <View
+            android:id="@+id/line_output"
+            android:layout_width="2dp"
+            android:layout_height="60dp"
+            android:background="#33FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/battery_section" />
+
+        <!-- Output Icons (Bottom) -->
+        <LinearLayout
+            android:id="@+id/output_icons"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <FrameLayout
+                android:id="@+id/card_output"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginHorizontal="16dp"
+                android:background="@drawable/battery_circle_bg"
+                android:backgroundTint="#1AFFFFFF">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="AC"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginHorizontal="16dp"
+                android:alpha="0.3"
+                android:background="@drawable/battery_circle_bg"
+                android:backgroundTint="#1AFFFFFF">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="DC"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <!-- Animation Dots (Electricity) -->
+        <ImageView
+            android:id="@+id/dot_input"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:src="@drawable/flow_dot"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/battery_section"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/input_icons" />
+
+        <ImageView
+            android:id="@+id/dot_output"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:src="@drawable/flow_dot"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@id/output_icons"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/battery_section" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Bottom Controls -->
+    <LinearLayout
+        android:id="@+id/bottom_controls"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#12161D"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- Input Limit Control -->
+        <LinearLayout
+            android:id="@+id/input_control_panel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="16dp"
+            android:visibility="gone">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_toggle_mainline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="CONNECT TO MAINLINE"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:backgroundTint="#1AFFFFFF"
+                app:cornerRadius="12dp"
+                app:strokeColor="#2DDE98"
+                app:strokeWidth="1dp" />
+
+            <RelativeLayout
+                android:id="@+id/charge_limit_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:alpha="0.5">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AC Input Limit (500W - 18000W)"
+                    android:textColor="#88FFFFFF"
+                    android:textSize="12sp" />
+                <TextView
+                    android:id="@+id/tv_charge_limit_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="Off"
+                    android:textColor="#2DDE98"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <SeekBar
+                android:id="@+id/sb_mainline_limit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="17500"
+                android:progress="0"
+                android:progressTint="#2DDE98"
+                android:thumbTint="@color/white"
+                android:splitTrack="false"
+                android:enabled="false" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_power_toggle"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                app:backgroundTint="#1AFFFFFF"
+                app:cornerRadius="16dp"
+                app:icon="@drawable/ic_power"
+                app:iconSize="32dp"
+                app:iconTint="#FF3B30" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_manage_appliances"
+                android:layout_width="0dp"
+                android:layout_height="64dp"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:text="ADD / REMOVE DEVICES"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:backgroundTint="@color/white"
+                app:cornerRadius="16dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Invisible elements for logic compatibility -->
+    <View android:id="@+id/path_input" android:layout_width="0dp" android:layout_height="0dp" android:visibility="invisible" />
+    <View android:id="@+id/path_output" android:layout_width="0dp" android:layout_height="0dp" android:visibility="invisible" />
+    <ImageView android:id="@+id/dot_input_2" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+    <ImageView android:id="@+id/dot_input_3" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+    <ImageView android:id="@+id/dot_output_2" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+    <ImageView android:id="@+id/dot_output_3" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+    <TextView android:id="@+id/tv_ac_toggle_label" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+    <View android:id="@+id/battery_glow" android:layout_width="0dp" android:layout_height="0dp" android:visibility="gone" />
+
+    <!-- Overload Alert -->
+    <TextView
+        android:id="@+id/tv_overload_alert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#E6FF3B30"
+        android:gravity="center"
+        android:padding="12dp"
+        android:text="⚠️ SYSTEM OVERLOAD"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

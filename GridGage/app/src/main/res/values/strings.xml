@@ -1,0 +1,74 @@
+<resources>
+    <string name="app_name">GridGage</string>
+    <string name="welcome_subtitle">Your Smart Energy Planner</string>
+    <string name="btn_get_started">Get Start</string>
+
+    <string name="info_content">
+&lt;font color="#38BDF8"&gt;&lt;b&gt;GridGage&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;br&gt;
+&lt;b&gt;ABOUT THIS APP&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+GridGage helps users find the right portable power station based on their electricity usage needs. The app calculates total power consumption and suggests suitable power solutions for daily use, travel, backup situations, or outdoor activities.&lt;br&gt;&lt;br&gt;
+&lt;b&gt;HOW TO USE&lt;/b&gt;&lt;br&gt;&lt;br&gt;
+&lt;b&gt;SELECT YOUR DEVICES&lt;/b&gt;&lt;br&gt;
+Choose all the electrical devices you plan to use.&lt;br&gt;
+&lt;b&gt;CALCULATE POWER USAGE&lt;/b&gt;&lt;br&gt;
+The app calculates the total watt consumption automatically.&lt;br&gt;
+&lt;b&gt;GET POWER STATION SUGGESTION&lt;/b&gt;&lt;br&gt;
+GridGage recommends a suitable portable power station based on your usage.&lt;br&gt;
+&lt;b&gt;MONITOR POWER DETAILS&lt;/b&gt;&lt;br&gt;
+View battery level, power output, estimated runtime, and electricity usage in real time.&lt;br&gt;
+&lt;b&gt;CHARGE WHEN NEEDED&lt;/b&gt;&lt;br&gt;
+Connect the power station to the main power line to recharge the battery.&lt;br&gt;&lt;br&gt;
+&lt;b&gt;FEATURES&lt;/b&gt;&lt;br&gt;
+• Portable Power Planning&lt;br&gt;
+• Real-Time Power Monitoring&lt;br&gt;
+• Runtime Estimation&lt;br&gt;
+• Overload Warning System&lt;br&gt;
+• Smart Device Management&lt;br&gt;&lt;br&gt;
+&lt;b&gt;POWER SAFETY NOTICE&lt;/b&gt;&lt;br&gt;
+If the connected devices consume more power than the selected power station can handle, the system will show an overload warning and ask you to remove some devices for safe usage.&lt;br&gt;&lt;br&gt;
+&lt;i&gt;Use power wisely. Stay prepared anytime.&lt;/i&gt;
+    </string>
+
+    <string name="title_calculator">Energy Calculator</string>
+    <string name="label_total_load">Total Load</string>
+    <string name="btn_find_stations">FIND STATIONS</string>
+    <string name="title_recommendations">Recommended Stations</string>
+    <string name="msg_no_recommendations">No stations found for this load. Try reducing devices.</string>
+    <string name="btn_back_home">BACK TO CALCULATOR</string>
+
+    <string name="dashboard_battery_label">BATTERY</string>
+    <string name="dashboard_input_label">INPUT</string>
+    <string name="dashboard_output_label">OUTPUT</string>
+    <string name="dashboard_runtime_label">RUNTIME</string>
+    <string name="overload_warning">⛔ SYSTEM OVERLOAD! REDUCE LOAD IMMEDIATELY</string>
+    <string name="btn_add_devices">MANAGE APPLIANCES</string>
+    <string name="btn_connect_main">CONNECT TO MAIN LINE</string>
+    <string name="btn_disconnect_main">DISCONNECT MAIN LINE</string>
+    <string name="input_status_on">Status: Input Active</string>
+    <string name="input_status_off">Status: Offline</string>
+    <string name="input_dialog_title">Main Line Input</string>
+    <string name="input_hint">Watts to input (e.g. 500)</string>
+    <string name="input_unit">W</string>
+    <string name="selected_none">Selected: None</string>
+    <string name="selected_format">Selected: %1$s</string>
+    <string name="dialog_add_appliances">Add Appliances</string>
+    <string name="btn_apply">APPLY</string>
+
+    <string name="device_info_format">%1$dWh | %2$dW | %3$dV</string>
+    <string name="battery_percent_format">%1$d%%</string>
+    <string name="watt_format">%1$dW</string>
+    <string name="runtime_format">%1$.1fh</string>
+    <string name="charging_format">Full in %1$.1fh</string>
+    <string name="runtime_empty">--h</string>
+
+    <!-- Appliance Names -->
+    <string name="appliance_fan">Fan</string>
+    <string name="appliance_tv">TV</string>
+    <string name="appliance_laptop">Laptop</string>
+    <string name="appliance_lights">Lights</string>
+    <string name="appliance_refrigerator">Refrigerator</string>
+    <string name="appliance_charger">Charger</string>
+    <string name="on">ON</string>
+    <string name="off">OFF</string>
+    <string name="master_power">MASTER POWER</string>
+</resources>

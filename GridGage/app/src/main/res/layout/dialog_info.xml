@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="650dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/gridgage"
+        android:alpha="0.8" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="650dp"
+        android:background="#AA000000" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="650dp"
+        android:orientation="vertical"
+        android:padding="30dp"
+        android:gravity="center_horizontal">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fadeScrollbars="false"
+            android:scrollbarThumbVertical="@color/sky_blue">
+
+            <TextView
+                android:id="@+id/tv_info_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:lineSpacingExtra="8dp"
+                android:padding="10dp"
+                android:fontFamily="sans-serif-medium" />
+        </ScrollView>
+
+        <Button
+            android:id="@+id/btn_close_info"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/sky_blue"
+            android:text="CLOSE"
+            android:textStyle="bold"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</FrameLayout>
